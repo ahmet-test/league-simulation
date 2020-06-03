@@ -15,7 +15,7 @@ class CreateTeamStatusesTable extends Migration
     {
         Schema::create('team_statuses', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('team_id')->unsigned()->nullable();
+            $table->unsignedInteger('team_id')->nullable();
             $table->unsignedTinyInteger('points');
             $table->unsignedTinyInteger('played');
             $table->unsignedTinyInteger('won');

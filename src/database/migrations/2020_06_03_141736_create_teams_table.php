@@ -14,7 +14,7 @@ class CreateTeamsTable extends Migration
     public function up()
     {
         Schema::create('teams', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
             $table->string('name', 64);
             $table->unsignedTinyInteger('power');
             $table->unsignedTinyInteger('morale');

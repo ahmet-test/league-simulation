@@ -1,8 +1,8 @@
 <?php
 
 use App\Team;
+use App\TeamStatus;
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\DB;
 
 class TeamTableSeeder extends Seeder
 {
@@ -21,11 +21,22 @@ class TeamTableSeeder extends Seeder
     public function run()
     {
         foreach ($this->teams as $team) {
-            DB::table('teams')->insert([
-                'name' => $team,
-                'power' => random_int(1, 90),
-                'morale' => random_int(30, 100),
-            ]);
+
+            $teamModel = new Team();
+            $teamModel->setAttribute('name', $team);
+            $teamModel->setAttribute('power', random_int(1, 100));
+            $teamModel->setAttribute('morale', random_int(1, 10));
+            $teamModel->save();
+
+            $teamStatuses = new TeamStatus();
+            $teamStatuses->setAttribute('team_id', $teamModel->id);
+            $teamStatuses->setAttribute('points', 0);
+            $teamStatuses->setAttribute('played', 0);
+            $teamStatuses->setAttribute('won', 0);
+            $teamStatuses->setAttribute('drawn', 0);
+            $teamStatuses->setAttribute('lost', 0);
+            $teamStatuses->setAttribute('goal_difference', 0);
+            $teamStatuses->save();
         }
 
     }

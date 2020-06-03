@@ -13,9 +13,4 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/teams','TeamController@index');
-Route::get('/teams/{team}','TeamController@show');
+Route::get('/', 'HomeController@index');

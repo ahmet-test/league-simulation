@@ -26,6 +26,12 @@ docker-compose up -d
 
 ---
 
+### Run Seeder
+
+````shell script
+docker-compose exec app php artisan db:seed --class=TeamTableSeeder
+````
+
 ### Key Generate
 
 ````shell script

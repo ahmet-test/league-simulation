@@ -14,3 +14,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', 'HomeController@index');
+
+Route::get('/ajax/list', 'AjaxController@list');
+Route::get('/ajax/launch-game','AjaxController@launchGame');
+Route::get('/ajax/next-match','AjaxController@nextMatch');
+Route::get('/ajax/play-next-match','AjaxController@playNextMatch');

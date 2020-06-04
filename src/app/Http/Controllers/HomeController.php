@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-
 use App\Team;
 
 class HomeController extends Controller

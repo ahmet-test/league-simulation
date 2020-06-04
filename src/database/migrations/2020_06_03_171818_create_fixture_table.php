@@ -1,11 +1,11 @@
 <?php
 
-use App\fixture;
+use App\Fixture;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateFixturesTable extends Migration
+class CreateFixtureTable extends Migration
 {
     /**
      * Run the migrations.
@@ -19,7 +19,7 @@ class CreateFixturesTable extends Migration
             $table->unsignedSmallInteger('week');
             $table->unsignedInteger('home_team');
             $table->unsignedInteger('away_team');
-            $table->enum('result', fixture::MATCH_RESULT_STATES);
+            $table->enum('result', Fixture::MATCH_RESULT_STATES)->nullable();
             $table->timestamps();
 
             $table->foreign('home_team')->references('id')->on('teams');

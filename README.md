@@ -1,5 +1,7 @@
 # League Simulation
 
+![](presentation.gif)
+
 ## Project Structure
 
 https://dbdiagram.io/d/5ed7a14439d18f5553002d75
@@ -26,12 +28,6 @@ docker-compose up -d
 
 ---
 
-### Run Seeder
-
-````shell script
-docker-compose exec app php artisan db:seed --class=TeamTableSeeder
-````
-
 ### Key Generate
 
 ````shell script
@@ -42,6 +38,12 @@ docker-compose exec app php artisan key:generate
 
 ````shell script
 docker-compose exec app php artisan migrate
+````
+
+### Run Seeder
+
+````shell script
+docker-compose exec app php artisan db:seed --class=TeamTableSeeder
 ````
 
 ### Create Cache

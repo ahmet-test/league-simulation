@@ -4,13 +4,19 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class fixture extends Model
+class Fixture extends Model
 {
     public const MATCH_RESULT_STATES = [
-        'won',
+        'won_home',
+        'won_away',
         'drawn',
-        'lost',
     ];
+
+    public const WON_HOME = 'won_home';
+    public const WON_AWAY = 'won_away';
+    public const DRAWN = 'drawn';
+
+    protected $table = 'fixture';
 
     /**
      * @var array

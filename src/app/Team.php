@@ -6,6 +6,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class Team extends Model
 {
+    public const DEFAULT_TEAMS = [
+        'Liverpool',
+        'Manchester City',
+        'Tottenham',
+        'Chelsea',
+    ];
+
     /**
      * @var array
      */
@@ -20,6 +27,5 @@ class Team extends Model
     {
         return $this->hasOne(TeamStatus::class);
     }
-
 
 }

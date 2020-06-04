@@ -12,14 +12,14 @@
 </head>
 <body>
 
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="{{ asset('js/jquery-3.5.1.min.js') }}"></script>
+<script src="{{ asset('js/popper.min.js') }}"></script>
+<script src="{{ asset('js/bootstrap.js') }}"></script>
+
 <div class="container">
     @yield('content')
 </div>
 
-<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script src=""></script>
-<script src="{{ asset('js/jquery-3.5.1.min.js') }}"></script>
-<script src="{{ asset('js/popper.min.js') }}"></script>
-<script src="{{ asset('js/bootstrap.js') }}"></script>
 </body>
 </html>
